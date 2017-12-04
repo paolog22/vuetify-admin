@@ -1,6 +1,6 @@
 <template>
   <div>
-      <v-navigation-drawer fixed v-model="drawerRight" :stateless="right" right clipped app>
+      <v-navigation-drawer fixed v-model="$store.state.right_open" :stateless="right" right clipped app>
       <v-list dense>
         <v-list-tile @click.stop="right = !right">
           <v-list-tile-action>
@@ -16,11 +16,17 @@
 </template>
 
 <script>
+    import Vue from 'vue'
     export default {
-        name: 'main-menu',
-        props: ['drawerRight'],
+        name: 'right-menu',
+        //props: ['drawerRight'],
         data: () => ({
-            right: null
+            right: null,
+            //drawerRight: false
         }),
+        mounted(){
+          //this.$store.commit('right_menu', "close");
+          //this.drawerRight = this.$store.state.right_open;
+        }
     }
 </script>

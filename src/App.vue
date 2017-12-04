@@ -1,13 +1,13 @@
 <template>
   <v-app id="inspire">
-    <right-menu :drawerRight="drawerRight"></right-menu>
+    <right-menu></right-menu>
 
     <!-- navbar -->
     <v-toolbar color="red darken-4" dark fixed app clipped-right clipped-left>
       <v-toolbar-side-icon @click.stop="left = !left" v-if="mobile"></v-toolbar-side-icon>
       <v-toolbar-title>{{config.app.name}}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-icon class="pointer" @click.stop="drawerRight = !drawerRight">more_vert</v-icon>
+      <v-icon class="pointer" @click.stop="$store.state.right_open = !$store.state.right_open">more_vert</v-icon>
     </v-toolbar>
 
     <!-- Left Menu -->
@@ -30,29 +30,22 @@
 </template>
 
 <script>
-import Vue from 'vue'
+  import Vue from 'vue'
   import MainMenu from './components/Menu.vue'
   import RightMenu from './components/RightMenu.vue'
   import config from './config.js'
-//import VueMoment from 'vue-moment'
-import menu_items from './menu.js';
+  import menu_items from './menu.js';
 
+//Vue.use(RightMenu);
   export default {
     name: 'app',
     data: () => ({
       menu_items: menu_items,
       config: config,
       mobile: window.innerWidth <= 992,
-      drawer: true,
       drawerRight: false,
-      right: null,
       left: null,
-      items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' }
-        ],
       mini: true,
-      right: null
     }),
     props: {
       source: String
@@ -62,6 +55,7 @@ import menu_items from './menu.js';
       //
     },
     mounted() {
+      this.$store.commit('right_menu', "close");
       //console.log(menu_items);
     }
   }

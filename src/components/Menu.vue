@@ -5,7 +5,7 @@
             <template v-for="(item,i) in this.menu_items">
                 <v-expansion-panel  v-if="item.child && !mini" :key="i">
                     <v-expansion-panel-content>
-                        <div slot="header"><v-icon>{{item.icon}}</v-icon><span> {{item.name}}</span><v-icon class="right">keyboard_arrow_down</v-icon></div>
+                        <div slot="header"><v-icon class="menu-icon">{{item.icon}}</v-icon><span> {{item.name}}</span><v-icon class="right">keyboard_arrow_down</v-icon></div>
                         <v-card>
                             <v-card-text class="grey lighten-4" v-if="!mini">
                                 <div class="expansion-panel__header" v-for="(child, cindex) in item.child" :key="cindex">
@@ -20,7 +20,7 @@
 
                 <div v-else :key="i" class="expansion-panel__header">
                     <div>
-                        <i class="material-icons icon">{{item.icon}}</i> <span v-show="!mini">{{ item.name }}</span>
+                        <v-icon class="menu-icon">{{item.icon}}</v-icon> <span v-show="!mini">{{ item.name }}</span>
                     </div>
                 </div>
             </template>
@@ -36,7 +36,7 @@
                 <v-card-text class="grey lighten-4">
                   <div class="expansion-panel__header" v-for="(child, cindex) in item.child" :key="cindex">
                     <div>
-                      <i class="material-icons icon">{{ child.icon }}</i> {{ child.name }}
+                      <v-icon class="menu-icon">{{ child.icon }}</v-icon> {{ child.name }}
                     </div>
                   </div>
                 </v-card-text>
@@ -46,7 +46,7 @@
 
         <div v-else :key="i" class="expansion-panel__header">
           <div>
-            <i class="material-icons icon">{{item.icon}}</i> {{ item.name }}
+            <v-icon class="menu-icon">{{item.icon}}</v-icon> {{ item.name }}
           </div>
         </div>
 
@@ -65,25 +65,20 @@ export default {
         return {
             menu_items: menu_items,
             mobile: window.innerWidth <= 992,
-            mini: true,
-            //left: false
+            mini: true
         }
     },
     methods: {
-        changeMenu(left){
-            if(!left){
-                //this.$emit('left', left);
-            }
-        }
+        //
     },
     mounted(){
         //console.log(this.mini);
     },
-    watch:{
+   /*  watch:{
         left: function(newVal, oldVal) {
             this.$emit('left', newVal);
         }
-    }
+    } */
 }
     
 </script>
@@ -94,6 +89,10 @@ export default {
 }
 .expansion-panel__header:hover{
     background-color: #e5e5e5
+}
+
+.menu-icon{
+    margin-left: 7px
 }
 
 </style>
