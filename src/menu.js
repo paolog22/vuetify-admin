@@ -1,4 +1,4 @@
-const menu_items = [
+const menu_items = [ // Only two levels is allowed for now
     {
         name: 'Dashboard',
         link: '/',

@@ -22,12 +22,20 @@
       <v-btn color="primary" @click.native="toggleOrder">Toggle sort order</v-btn>
       <v-btn color="primary" @click.native="nextSort">Sort next column</v-btn>
     </div>
+
+    <div>
+      <router-link to="/login">Login Page</router-link>
+      <br>
+      <router-link to="/forgot-password">Reset Request</router-link>
+      <br>
+      <router-link to="/reset-password">New Password</router-link>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Home',
     data () {
       return {
         search: '',

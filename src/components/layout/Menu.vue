@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div @mouseover="mini = false" @mouseout="mini = true" v-if="!mobile">
+    <div @mouseover="mini = false" @mouseout="mini = true" v-if="!$store.state.isMobile">
       <v-navigation-drawer permanent light :mini-variant.sync="mini" fixed :stateless="left" app clipped >
             <template v-for="(item,i) in this.menu_items">
                 <v-expansion-panel  v-if="item.child && !mini" :key="i">
@@ -27,8 +27,13 @@
       </v-navigation-drawer>
     </div>
 
-    <v-navigation-drawer v-else left fixed :hide-overlay="true" touchless :stateless="left" v-model="left" app clipped>
-      <template v-for="(item,i) in menu_items">
+    <v-navigation-drawer v-else left fixed :hide-overlay="true" :stateless="left" v-model="$store.state.left_open" app clipped>
+        <div class="expansion-panel__header">
+            <div>
+                {{$store.state.app_name}}
+            </div>
+        </div>
+        <template v-for="(item,i) in menu_items">
         <v-expansion-panel  v-if="item.child" :key="i">
           <v-expansion-panel-content>
               <div slot="header"><v-icon>{{item.icon}}</v-icon> {{item.name}}</div>
@@ -57,28 +62,16 @@
 </template>
 
 <script>
-import menu_items from '../menu.js';
+import menu_items from '../../menu.js';
 export default {
     name: 'main-menu',
-    props: ['left'],
     data(){
         return {
             menu_items: menu_items,
-            mobile: window.innerWidth <= 992,
-            mini: true
+            mini: true,
+            left: null,
         }
-    },
-    methods: {
-        //
-    },
-    mounted(){
-        //console.log(this.mini);
-    },
-   /*  watch:{
-        left: function(newVal, oldVal) {
-            this.$emit('left', newVal);
-        }
-    } */
+    }
 }
     
 </script>

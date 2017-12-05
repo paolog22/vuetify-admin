@@ -10,6 +10,13 @@ const store = new Vuex.Store({
         left_open: false,
         right_open: false,
         preloader: true,
+        isMobile: window.innerWidth <= 992,
+        app_name: 'Vuetify Admin',
+        api: {
+            url: 'http://api.example.com',
+            client_id: 2,
+            client_secret: 'xxxxxxxx',
+        },
         user: {
             name: "Ayesha",
             picture: require("../assets/img/authors/prf4.jpg"),

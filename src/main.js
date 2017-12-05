@@ -6,13 +6,13 @@ import VueRouter from 'vue-router';
 import Vuetify from 'vuetify'
 import store from './store/store.js'
 import axios from 'axios';
-import config from './config'
+//import config from './config'
 import auth from './packages/auth'
 import Acl from './packages/acl'
 import routes from './routes.js'
 
 
-axios.defaults.baseURL = config.api.url;
+axios.defaults.baseURL = store.state.api.url;
 axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest',
     'Authorization': 'Bearer ' + localStorage.getItem('access_token')
