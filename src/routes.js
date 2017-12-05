@@ -19,7 +19,7 @@ const routes = [
         name: 'Login',
         component: resolve => require(['./components/Login.vue'], resolve)
     },{
-        path: '/forget-password',
+        path: '/forgot-password',
         name: 'ForgetPassword',
         component: resolve => require(['./components/ForgetPassword.vue'], resolve)
     },{
