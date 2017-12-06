@@ -11,7 +11,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.pages.conf')
 
-const spinner = ora('building for production...')
+const spinner = ora('building for GitHub Pages...')
 spinner.start()
 
 rm(path.join(config.pages.assetsRoot, config.pages.assetsSubDirectory), err => {
