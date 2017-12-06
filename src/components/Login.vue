@@ -17,7 +17,7 @@
                 ></v-text-field>
             </v-form>
             <div>
-                <router-link to="/forget-password">Forget password</router-link>
+                <router-link to="/forgot-password">Forget password</router-link>
             </div>
             <div class="text-lg-right">
                 <v-btn @click="submit" :disabled="!valid">Login</v-btn>
@@ -48,7 +48,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .form-box {
         width: 450px;
         margin: 10% auto;
@@ -78,9 +78,7 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: 3px;
-    }
-
-    .application--wrap {
+        min-height: 100%;
         background-image: url("https://images.unsplash.com/photo-1437422061949-f6efbde0a471?auto=format&fit=crop&w=2250&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
     }
 </style>

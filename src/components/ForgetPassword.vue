@@ -74,9 +74,7 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: 3px;
-    }
-
-    .application--wrap {
+        min-height: 100%;
         background-image: url("https://images.unsplash.com/photo-1437422061949-f6efbde0a471?auto=format&fit=crop&w=2250&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
     }
 </style>
