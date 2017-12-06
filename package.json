@@ -1,11 +1,12 @@
 {
-  "name": "material",
+  "name": "vuetify-admin",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A Vuetify admin panel",
   "author": "Marcelo Barros da Silva <marcelo.bsilva@outlook.com.br>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "pages": "node build/pages.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },

@@ -6,6 +6,9 @@ const config = {
     },
     app: {
         name: 'Your App Name'
+    },
+    build: {
+        root: '/'
     }
 
 };
