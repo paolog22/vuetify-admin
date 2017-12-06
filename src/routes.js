@@ -1,6 +1,6 @@
 const routes = [
     {
-        path: '/vuetify-admin/',
+        path: '/',
         name: 'HelloWorld',
         component: resolve => require(['./Layout.vue'], resolve),
         children: [
@@ -15,19 +15,19 @@ const routes = [
             }
         ]
     },{
-        path: '/vuetify-admin/login',
+        path: '/login',
         name: 'Login',
         component: resolve => require(['./components/Login.vue'], resolve)
     },{
-        path: '/vuetify-admin/forgot-password',
+        path: '/forgot-password',
         name: 'ForgetPassword',
         component: resolve => require(['./components/ForgetPassword.vue'], resolve)
     },{
-        path: '/vuetify-admin/reset-password',
+        path: '/reset-password',
         name: 'ResetPassword',
         component: resolve => require(['./components/ResetPassword.vue'], resolve)
     },{
-        path: '/vuetify-admin/*',
+        path: '/*',
         name: '404',
         component: resolve => require(['./components/404.vue'], resolve)
     },
