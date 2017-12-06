@@ -85,8 +85,8 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: 'https://sapizi.github.io/vuetify-admin/',
+    assetsSubDirectory: '/vuetify-admin/static',
+    assetsPublicPath: '/vuetify-admin/',
 
     productionSourceMap: true,
     devtool: '#source-map',
